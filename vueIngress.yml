@@ -1,0 +1,15 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: vueAppIngress
+  labels:
+    app: vue
+spec:
+  rules:
+  - host: <hostname>
+    http:
+      paths:
+        - path: /
+          backend:
+            serviceName: vueService
+            servicePort: 8080

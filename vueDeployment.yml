@@ -1,0 +1,30 @@
+apiVersion: apps/v1 
+kind: Deployment
+metadata:
+  name: vue
+  labels:
+    app: vue
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: vue
+  template:
+    metadata:
+      labels:
+        app: vue
+    spec:
+      containers:
+      - image: vueAppDeploy:latest
+        name: vueAppDeploy
+        env:
+        ports:
+        - containerPort: 8080
+          name: vueAppDeploy
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "500m"

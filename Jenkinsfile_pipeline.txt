@@ -1,0 +1,8 @@
+This pipeline consists of various stages:
+1.To build code from github repo, we need to clone the code from repository. so first stage "Checkout SCM" does the same thing. Here we have given the url from which code needs to be cloned,
+along with branch name and credentials created on jenkins credentials(to give access to clone the repo to jenkins workspace).
+2.Now, we have our code second step is to build the code.
+Note: we are building on jenkins server so that there's no version incompatability and everytime code runs on same versions.
+so , 'Build' stage builds the code and store the artifacts in jenkins workspace.
+3.Now that build is done , all we need to do is to deploy the application on cloud. For this, we can use any automation deployment tool. Here i used Urban code deploy to 
+deploy the application on deployment server.For ucd setup please refer to ucd_setup_instructions.txt.

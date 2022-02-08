@@ -1,0 +1,14 @@
+1. Install Urbancode based on documentation given by ibm: https://www.ibm.com/docs/en/urbancode-deploy/7.0.4?topic=installing
+2. Once the agent is installed on deployment server we need to attach the same to the resource tree of the ucd
+3. After this, create the environment and application for jenkins where we can deploy our applications. 
+sample environment name='dev' and application name='DeployToCloud'
+4. After creation of application next step is to create a component for application (sample component name='vueComponent'). In this component we can define the whole process of deployment.
+5. Refer to vueComponentProcess.txt for process related details
+6. Once all this is done, this component needs to be attached to application and then we need to attach it to the resource agent.
+7. After component addition, application process needs to be created where only one step needs to be defined i.e. to install vueComponent component.
+sample application process name: ApplicationProcess-vueComponent
+
+why all these are needed?
+when jenkins connect to ucd, it goes to the defined environment given on jenkinfile then on given application. From there it looks for application process of the component which installs
+the actual component where the process is defined and then it executes the process of the given component.
+The component is attached to the deployment server( in resource agent) so the process is getting executed on your deployment server.
