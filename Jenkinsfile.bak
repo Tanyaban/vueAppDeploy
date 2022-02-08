@@ -7,7 +7,7 @@ pipeline {
                  $class: 'GitSCM',
                  branches: [[name: "master"]],
                  userRemoteConfigs: [[
-                    url: 'git@github.com:Tanyaban/vueAppDeploy.git',
+                    url: 'git@github.ibm.com:Innovation-Lab/hcp-ui.git',
                     credentialsId: 'Tanya Bansal'
                  ]]
                 ])

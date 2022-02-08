@@ -13,13 +13,3 @@ add the name of your jenkinsfile present in github repo(here Jenkinsfile). This 
 9. Now trigger the pipeline to deploy your application to the cloud.
 10. For continous delivery to production environment, we can add one more stage in jenkins pipeline after Build stage for email approval of manager so once it is approved then only
 it will move ahead to deployment to cloud.
-11. For horizontal autoscaling we can use the following command:
-kubectl autoscale deployment <deployment name> --cpu-percent=50 --min=2 --max=10
-This command will create a hpa which will maintain the pods from 2 to 10 based on cpu utilization. we can also create hpa based on custom metrics.
-For nodes autoscaling, we can add the environment variables in the already created cluster,
-export NUM_NODES = 2
-export KUBE_AUTOSCALER_MIN_NODES = 2
-export KUBE_AUTOSCALER_MAX_NODES = 10
-export KUBE_ENABLE_CLUSTER_AUTOSCALER = true
-Now start the cluster by running kube-up.sh script. After this, if we increase the load of pods we can also observe the increase in number of nodes as well on more load.
-
