@@ -5,7 +5,7 @@ pipeline {
             steps {
                 checkout([
                  $class: 'GitSCM',
-                 branches: [[name: "master"]],
+                 branches: [[name: "main"]],
                  userRemoteConfigs: [[
                     url: 'git@github.com:Tanyaban/vueAppDeploy.git',
                     credentialsId: 'Tanya Bansal'

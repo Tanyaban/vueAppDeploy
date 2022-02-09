@@ -1,5 +1,5 @@
 1. Install Urbancode based on documentation given by ibm: https://www.ibm.com/docs/en/urbancode-deploy/7.0.4?topic=installing
-2. Once the agent is installed on deployment server we need to attach the same to the resource tree of the ucd
+2. Once the agent is installed on deployment server we need to attach the same to the resource tree of the agent.
 3. After this, create the environment and application for jenkins where we can deploy our applications. 
 sample environment name='dev' and application name='DeployToCloud'
 4. After creation of application next step is to create a component for application (sample component name='vueComponent'). In this component we can define the whole process of deployment.

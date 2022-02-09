@@ -1,14 +1,14 @@
 1. Dockerfile:
 Here we are taking node alpine image(less size) as base image and then we are adding package json and code on top of it
-after that we are just running npm install command and exposing port
-cmd command to start the application
+after that we are just running npm install command and exposing port,
+cmd command to start the application.
 
 2. Service and deployment file:
 Here we are creating service file on Nodeport with port 8080 and selector as vue. so this service vueService will get attached to all pods having same selector/labels
-In deployment file, we have defined selector, replicas(how many pods required), container info(port, image name, resources required for each podetc) so it will create deployment and
+In deployment file, we have defined selector, replicas(how many pods required), container info(port, image name, resources required for each pod,etc) so it will create deployment and
 defined number of pods with given configurations. 
 
 3. Ingress.yml
 Now our deployment is done, but to access the deployed code we need to create route. So ingress will help in that area.
 We attached service that we created in the given ingress host and now we can access the service using this ingress host.
-Note: we haven't attached certificates to it so to make it https we need to create certificates, add it as secret in kubernetes and then use it
+Note: I haven't attached certificates to it so to make it https we need to create certificates, add it as secret in kubernetes and then use it.

@@ -1,11 +1,11 @@
-Note: Given that docker and kubernetes setup is already there.
+Note: Given that docker and kubernetes setup is already present on deployment server.
 1. First step in the process structure should be to download all the artifacts from jenkins to ucd
 2. Now , we need to create the docker image using Dockerfile in the repository using command:
 docker build -t vueAppDeploy .
 3. After creation of docker image we need to push the image to docker hub using:
 docker push vueAppDeploy
-4.Now that our image is ready we can deploy it to the kuberenetes namespace. To do so, we need to have static kube config to login to particular namespace
-5. 
+4.Now that our image is ready we can deploy it to the kubernetes namespace. 
+5. To do so, we need to have static kube config to login to particular namespace, which we can get by setting up kubeconfig environment variable.
 6. Now we are into our desired namespace. So, we can create service, deployment and ingress yaml using vueService.yml,vueDeployment.yml and vueIngress.yml files
 kubectl apply -f vueService.yml
 kubectl apply -f vueDeployment.yml
